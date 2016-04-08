@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-02-23 09:48:00
+ * @version $Id$
+ */
+    body{
+        padding:0;
+        margin:0;
+    }
+    .wrap{
+        height: auto;
+        width:65%;
+        margin:100px auto;
+        
+    }
+    .face{
+        height: 200px;
+        width: 200px;
+        position: relative;
+        overflow: hidden;
+        float: left;
+        margin:2px;
+         transform-style:preserve-3d;
+         -webkit-transform-style:preserve-3d;
+         -moz-transform-style:preserve-3d;
+         -ms-transform-style:preserve-3d;
+    }
+    .face .box{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+        top:0;
+        z-index: 9999;
+        transition:all ease 0.5s;
+        -moz-transition:all ease 0.5s;
+        -webkit-transition:all ease 0.5s;
+        -ms-transition:all ease 0.5s;
+        transform: rotate3d(0, 0, 0,0);
+        -moz-transform: rotate3d(0, 0, 0,0);
+        -webkit-transform: rotate3d(0, 0, 0,0);
+        -ms-transform: rotate3d(0, 0, 0,0);
+        backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+    }
+    .face .box-mask{
+        height: 100%;
+        width: 100%;
+        position:absolute;
+        left:0;
+        top:0;
+        background:rgba(255,0,0,1);
+        font-family: "微软雅黑";
+        z-index: 999;
+         backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        transition:all ease 0.5s;
+        -moz-transition:all ease 0.5s;
+        -webkit-transition:all ease 0.5s;
+        -ms-transition:all ease 0.5s;
+        transform:rotate3d(0,1,0,-180deg);
+        -moz-transform:rotate3d(0,1,0,-180deg);
+        -ms-transform:rotate3d(0,1,0,-180deg);
+        -webkit-transform:rotate3d(0,1,0,-180deg);
+    }
+    .face .box-mask p{
+        color:white;
+        padding:0;
+        text-align:center;
+        margin:0;
+        font-size: 30px;
+        line-height:200px;
+    }
+    .face .mask{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: rgba(0,0,0,0.5);
+        font-size: 30px;
+        font-family: "微软雅黑";
+        text-align: center;
+        line-height: 200px;
+        color:white;
+    }
+    .face img{
+        height: 100%;
+        width: 100%;    
+    }
+    .face:hover .box{
+        transform:rotate3d(0,1,0,-180deg);
+        -moz-transform:rotate3d(0,1,0,-180deg);
+        -ms-transform:rotate3d(0,1,0,-180deg);
+        -webkit-transform:rotate3d(0,1,0,-180deg);
+        z-index:999;
+    }
+    .face:hover .box-mask{
+        transform: rotate3d(0, 0,0,0);
+        -moz-transform: rotate3d(0, 0, 0,0);
+        -webkit-transform: rotate3d(0, 0, 0,0);
+        -ms-transform: rotate3d(0, 0, 0,0);
+        z-index:9999;
+    }
